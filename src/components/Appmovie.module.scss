@@ -1,0 +1,27 @@
+.amovie{
+    width: 400px;
+    height: 500px;
+    background: #fff;
+    border: 5px solid lavender;
+    margin: 10px;
+    text-align: center;
+    a{
+        text-decoration: none;
+        color: #333;
+        .title{
+            font-size: 18px;
+        }
+        .subtitle{
+            font-size: 14px;
+        }
+        .img{
+            width: 65%;
+            height: 350px ;
+        }
+        .date{
+            margin-top: 10px;
+            color: #888;
+            font-weight: bold;
+        }
+    }
+}
