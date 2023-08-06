@@ -1,0 +1,38 @@
+.about{
+    .box{
+        width: 60%;
+        margin: 0 auto;
+        background: rgba(230, 230, 250, 0.301);
+        text-align: center;
+        padding: 80px;
+        .title{
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+        }
+        .subtitle{
+            font-size: 20px;
+            font-style: italic;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #555;
+        }
+        .img{
+            margin-top: 30px;
+        }
+        .overview{
+            margin-top: 30px;
+        }
+        .date{
+            color: #555;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .voteAverage{
+            color: tomato;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    }
+}

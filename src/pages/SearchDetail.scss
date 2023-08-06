@@ -1,0 +1,114 @@
+.searchDetail{
+    width: 100%;
+    margin: 0 auto;
+    .movieInfo{
+        position: relative;
+        .search-backImg{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            min-height: 80vh;
+            position: relative;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.93), rgba(58, 58, 58, 0.86), rgba(12, 12, 12, 0.33), transparent); //적용안됨
+            img{
+                width: 100%;
+                height: 90vh;
+            }
+            &::before{
+                background: linear-gradient(0deg,#16161a 0,hsla(0deg,0%,9%,.987) 1.62%,hsla(0deg,0%,9%,.951) 3.1%,hsla(0deg,0%,9%,.896) 4.5%,hsla(0deg,0%,9%,.825) 5.8%,hsla(0deg,0%,9%,.741) 7.06%,hsla(0deg,0%,9%,.648) 8.24%,hsla(0deg,0%,9%,.55) 9.42%,hsla(0deg,0%,9%,.45) 10.58%,hsla(0deg,0%,9%,.352) 11.76%,hsla(0deg,0%,9%,.259) 12.94%,hsla(0deg,0%,9%,.175) 14.2%,hsla(0deg,0%,9%,.104) 15.5%,hsla(0deg,0%,9%,.049) 16.9%,hsla(0deg,0%,9%,.013) 18.38%,hsla(0deg,0%,9%,0) 20%);
+                content: "";
+                height: 100%;
+                left: 0;
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+            }
+        }
+        .search-info{
+            max-width: 700px; //55% 고민
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 1rem;
+            position: absolute;
+            top: 33%;
+            z-index: 11;
+            .search-title{
+                font-size: 50px;
+                font-weight: bold;
+                color: #fff;
+                margin: 0;
+            }
+            .search-originTit{
+                font-size: 40px;
+                color: #fff;
+                font-style: italic;
+                margin: 0;
+            }
+            .search-desc{
+                margin: 0;
+                font-size: 20px;
+                color: #fff;
+            }
+            .search-release{
+                margin: 0;
+                color: #fff;
+            }
+        }
+    }
+    .creditInfo{
+        margin-top: 0px;
+        width: 100%;
+        padding: 0 2rem;
+        box-sizing: border-box;
+        .search-actors{
+            h3{
+                color: #fff;
+                font-size: 30px;
+            }
+            .swiper-wrapper{
+                width: 100%;
+                max-width: 1440px;
+                .swiper-slide{
+                    .search-img{
+                        width: 100%;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .search-info{
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 33%;
+                        background: rgba(0,0,0,.7);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 30px;
+                        box-sizing: border-box;
+                        color: rgba(255,255,255,.8);
+                        opacity: 0;
+                        &:hover{
+                            opacity: 1;
+                            transition: .5s;
+                        }
+                        .actor-name{
+                            font-size: 20px;
+                            color: #fff;
+                        }
+                        .actor-char{
+                            font-size: 20px;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
