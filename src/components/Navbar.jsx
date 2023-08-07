@@ -1,6 +1,7 @@
 import { BsSearch } from "react-icons/bs"; 
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import SearchModal from "./SearchModal";
 
 const Navbar = () => {
@@ -35,11 +36,11 @@ const Navbar = () => {
 
     return (
         <nav className={isScrolled ? 'scrolled' : ''}>
-            <div className='logo'><img src={require("../img/logo_pink.png")} alt="logo" /></div>
+            <div className='logo'><Link to="/"><img src={require("../img/logo_pink.png")} alt="logo" /></Link></div>
             <ul>
-                <li className='nav-item'>
+                {/* <li className='nav-item'>
                     <NavLink to='' style={({isActive}) => (isActive ? activeStyle : undefined)}>Home</NavLink>
-                </li>
+                </li> */}
                 {/* <li className='nav-item'>
                     <NavLink to='movies' style={({isActive}) => (isActive ? activeStyle : undefined)}>Movies</NavLink>
                 </li> */}

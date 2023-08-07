@@ -5,17 +5,14 @@
     transform: translate(-50%,-50%);
     left: 50%;
     top: 5rem;
-    background-color: #0f172a;
+    background-color: #040213;
     padding: 16px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    box-shadow: #0000002b 0 -23px 25px inset, #00000026 0 -36px 30px inset, #0000001a 0 -79px 40px inset, #0000000f 0 2px 1px, #00000017 0 4px 2px, #00000017 0 8px 4px, #00000017 0 16px 8px, #00000017 0 32px 16px;
-    outline: 1px solid rgba(255,255,255,.219);
-    height: max-content;
     overflow: hidden;
-    max-width: 500px;
     width: 100%;
+    max-width: 700px;
     .container{
         position: relative;
         .search-title{

@@ -7,7 +7,7 @@ import "./Appmovie.scss"
 
 const Appmovie = ({id,title,posterPath,date, average }) => {
     
-    //하트아이콘 클릭하면 색깔 바뀌게 ->실행안됨
+    //하트아이콘 클릭하면 색깔 바뀌게 ->실행안됨/ 수정하기
     const [isHeartRed, setIsHeartRed] = useState(false);
     const handleHeartClick = () => {setIsHeartRed(!isHeartRed);};
     
@@ -42,3 +42,7 @@ const Appmovie = ({id,title,posterPath,date, average }) => {
 };
 
 export default Appmovie;
+
+
+
+

@@ -9,28 +9,31 @@ import Search from '../components/Search';
 const Home = () => {
     const [isLoading, setLoading] = useState(true);
     const [appMovie, setAppMovie] = useState([]);
-    const [visibleMovies, setVisibleMovies] = useState(5); // Number of initially visible movies
-    const moviesPerPage = 5; // Number of movies to show on each "더보기" (Load More) click
+    //++
+    const [visibleMovies, setVisibleMovies] = useState(5); // 처음에 보이는거
+    const moviesPerPage = 5; // 버튼 클릭하면 5개씩
 
     const getMovies = async () => {
         try {
-            const response = await axios.get(
-                'https://api.themoviedb.org/3/movie/now_playing?api_key=6226250a5cf369ae485bb71106550d6f&language=ko-KR&region=KR'
-            );
-            setAppMovie(response.data.results);
-            setLoading(false);
-            console.log(response);
+        const response = await axios.get(
+            'https://api.themoviedb.org/3/movie/now_playing?api_key=6226250a5cf369ae485bb71106550d6f&language=ko-KR&region=KR'
+        );
+        setAppMovie(response.data.results);
+        setLoading(false);
+        console.log(response);
         } catch (error) {
-            console.error('Error fetching movies:', error);
-            setLoading(false);
+        console.error('Error fetching movies:', error);
+        setLoading(false);
         }
     };
 
+    
     useEffect(() => {
         getMovies();
     }, []);
 
-    // Event handler to show more movies
+
+    //++
     const handleLoadMore = () => {
         setVisibleMovies((prevVisible) => prevVisible + moviesPerPage);
     };
@@ -42,15 +45,12 @@ const Home = () => {
             <Search/>
             <div className={styles.home_wrap}>
                 <h2 className={styles.boxOffice}>BOX OFFICE</h2>
-                {isLoading ? (
-                    <div>
-                        <span className='load'>Loading...</span>
-                    </div>
-                ) : (
+                {isLoading ? (<div><span className='load'>Loading...</span></div>) : (
                     <div className={styles.appWrap}>
-                        {appMovie.slice(0, visibleMovies).map((amovie) => (
+                        {appMovie.slice(0, visibleMovies)
+                        .map((amovie) => (
                             <Appmovie
-                                key={amovie.id}
+                                id={amovie.id}
                                 title={amovie.title}
                                 subtitle={amovie.original_title}
                                 posterPath={amovie.poster_path}
@@ -72,3 +72,9 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
+
+

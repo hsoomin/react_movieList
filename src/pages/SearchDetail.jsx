@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useParams } from 'react-router-dom'; 
 import './SearchDetail.scss'
 
-const SearchDetail = ( props ) => {  //{ apiKey, imgPath }왜 못불러와.....
+const SearchDetail = ( { apiKey, imgPath } ) => {  //{ apiKey, imgPath }왜 못불러와.....
     const { movieId } = useParams(); 
     const [detailInfo, setDetailInfo] = useState({});
     const [actors, setActors] = useState([]);
@@ -87,7 +87,7 @@ const SearchDetail = ( props ) => {  //{ apiKey, imgPath }왜 못불러와.....
                         ))}
                     </Swiper>
                 </div>
-            </div>  */}
+            </div>   */}
         </div>
     );
 };
