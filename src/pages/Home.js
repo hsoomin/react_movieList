@@ -4,6 +4,7 @@ import Appmovie from '../components/Appmovie';
 import styles from './Home.module.scss';
 import Mainslide from '../components/Mainslide';
 import Search from '../components/Search';
+import Upcoming from '../components/Upcoming';
 // import Footer from '../components/Footer';
 
 const Home = () => {
@@ -41,7 +42,7 @@ const Home = () => {
 
     return (
         <div>
-            <Mainslide />
+            <Upcoming/>
             <Search/>
             <div className={styles.home_wrap}>
                 <h2 className={styles.boxOffice}>BOX OFFICE</h2>
@@ -66,6 +67,7 @@ const Home = () => {
                     </div>
                 )}
             </div>
+            <Mainslide />
             {/* <Footer /> */}
         </div>
     );
