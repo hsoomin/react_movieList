@@ -3,7 +3,6 @@ import axios from 'axios';
 import styles from './Upcoming.module.scss'
 
 
-//+장르 추가하기
 const Upcoming = () => {
     const [isLoading, setLoading] = useState(true);
     const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -14,6 +13,7 @@ const Upcoming = () => {
                 'https://api.themoviedb.org/3/movie/upcoming?api_key=6226250a5cf369ae485bb71106550d6f&language=ko-KR&region=KR'
             );
             setUpcomingMovies(response.data.results);
+            console.log(response.data.results);
             setLoading(false);
         } catch (err) {
             console.error('Error fetching movies:', err);

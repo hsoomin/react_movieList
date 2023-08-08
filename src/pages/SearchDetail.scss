@@ -10,7 +10,6 @@
             gap: 0;
             min-height: 80vh;
             position: relative;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.93), rgba(58, 58, 58, 0.86), rgba(12, 12, 12, 0.33), transparent); //적용안됨
             img{
                 width: 100%;
                 height: 90vh;
@@ -24,9 +23,18 @@
                 width: 100%;
                 bottom: 0;
             }
+            &::after{
+                background: linear-gradient(to right, rgba(0, 0, 0, 0.93), rgba(12, 12, 12, 0.33), transparent);
+                content: "";
+                height: 100%;
+                left: 0;
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+            }
         }
         .search-info{
-            max-width: 700px; //55% 고민
+            max-width: 51%;
             padding: 0 2rem;
             display: flex;
             flex-direction: column;
@@ -39,23 +47,20 @@
             .search-title{
                 font-size: 50px;
                 font-weight: bold;
-                color: #fff;
-                margin: 0;
+                color: #fffffe;
             }
             .search-originTit{
                 font-size: 40px;
-                color: #fff;
+                color: #fffffe;
                 font-style: italic;
                 margin: 0;
             }
             .search-desc{
-                margin: 0;
                 font-size: 20px;
-                color: #fff;
+                color: #fffffe;
             }
             .search-release{
-                margin: 0;
-                color: #fff;
+                color: #fffffe;
             }
         }
     }
@@ -66,8 +71,12 @@
         box-sizing: border-box;
         .search-actors{
             h3{
-                color: #fff;
+                color: #fffffe;
                 font-size: 30px;
+            }
+            .mySwiper{
+                position: relative;
+                overflow: hidden;
             }
             .swiper-wrapper{
                 width: 100%;
@@ -100,11 +109,11 @@
                         }
                         .actor-name{
                             font-size: 20px;
-                            color: #fff;
+                            color: #fffffe;
                         }
                         .actor-char{
                             font-size: 20px;
-                            color: #fff;
+                            color: #fffffe;
                         }
                     }
                 }

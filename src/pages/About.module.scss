@@ -1,42 +1,3 @@
-// .about{
-//     .box{
-//         width: 60%;
-//         margin: 0 auto;
-//         background: rgba(230, 230, 250, 0.301);
-//         text-align: center;
-//         padding: 80px;
-//         .title{
-//             font-size: 30px;
-//             font-weight: bold;
-//             color: #333;
-//         }
-//         .subtitle{
-//             font-size: 20px;
-//             font-style: italic;
-//             font-weight: bold;
-//             margin-top: 10px;
-//             color: #555;
-//         }
-//         .img{
-//             margin-top: 30px;
-//         }
-//         .overview{
-//             margin-top: 30px;
-//         }
-//         .date{
-//             color: #555;
-//             font-size: 18px;
-//             margin-top: 20px;
-//         }
-//         .voteAverage{
-//             color: tomato;
-//             font-size: 20px;
-//             font-weight: bold;
-//             margin-top: 20px;
-//         }
-//     }
-// }
-
 .about{
     width: 100%;
     margin: 0 auto;
@@ -44,9 +5,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 80vh;
+        min-height: 90vh;
         position: relative;
-        background: linear-gradient(to right, rgba(0, 0, 0, 0.93), rgba(58, 58, 58, 0.86), rgba(12, 12, 12, 0.33), transparent); //적용안됨
         .backdrop{
             width: 100%;
             height: 100vh;
@@ -60,9 +20,18 @@
             width: 100%;
             bottom: 0;
         }
+        &::after{
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.93), rgba(12, 12, 12, 0.33), transparent);
+            content: "";
+            height: 100%;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
     }
     .aboutTextBox{
-        max-width: 700px; //55% 고민
+        max-width: 51%; //700px 고민
         padding: 0 2rem;
         display: flex;
         flex-direction: column;
@@ -70,31 +39,27 @@
         align-items: flex-start;
         gap: 1rem;
         position: absolute;
-        top: 33%;
+        top: 30%;
         z-index: 11;
+        color: #fffffe;
         .title{
-            font-size: 50px;
+            font-size: 45px;
             font-weight: bold;
-            color: #fff;
-            margin: 0;
         }
         .subtitle{
-            font-size: 40px;
-            color: #fff;
+            font-size: 38px;
             font-style: italic;
-            margin: 0;
         }
         .overview{
-            margin: 0;
             font-size: 20px;
-            color: #fff;
+        }
+        .genre:not(:last-child){
+            margin-right: 20px;
         }
         .date{
-            margin: 0;
-            color: #fff;
+            font-size: 18px;
         }
         .voteAverage{
-            color: tomato;
             font-size: 20px;
             font-weight: bold;
             margin-top: 20px;

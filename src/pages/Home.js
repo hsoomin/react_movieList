@@ -1,16 +1,14 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Appmovie from '../components/Appmovie';
 import styles from './Home.module.scss';
-import Mainslide from '../components/Mainslide';
+import Appmovie from '../components/Appmovie';
 import Search from '../components/Search';
 import Upcoming from '../components/Upcoming';
-// import Footer from '../components/Footer';
+import Footer from '../components/Footer';
 
 const Home = () => {
     const [isLoading, setLoading] = useState(true);
     const [appMovie, setAppMovie] = useState([]);
-    //++
     const [visibleMovies, setVisibleMovies] = useState(5); // 처음에 보이는거
     const moviesPerPage = 5; // 버튼 클릭하면 5개씩
 
@@ -28,29 +26,26 @@ const Home = () => {
         }
     };
 
-    
     useEffect(() => {
         getMovies();
     }, []);
 
-
-    //++
     const handleLoadMore = () => {
         setVisibleMovies((prevVisible) => prevVisible + moviesPerPage);
     };
-    
 
     return (
         <div>
             <Upcoming/>
             <Search/>
             <div className={styles.home_wrap}>
-                <h2 className={styles.boxOffice}>BOX OFFICE</h2>
+                <h2 className={styles.boxOffice}>현재 상영 목록</h2>
                 {isLoading ? (<div><span className='load'>Loading...</span></div>) : (
                     <div className={styles.appWrap}>
                         {appMovie.slice(0, visibleMovies)
                         .map((amovie) => (
                             <Appmovie
+                                key={amovie.id}
                                 id={amovie.id}
                                 title={amovie.title}
                                 subtitle={amovie.original_title}
@@ -67,16 +62,9 @@ const Home = () => {
                     </div>
                 )}
             </div>
-            <Mainslide />
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 };
 
 export default Home;
-
-
-
-
-
-

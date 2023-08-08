@@ -19,8 +19,6 @@ const About = () => {
         });
     }, []);  
 
-
-
     const movieDetail= loading ? (<div className={`${styles.loading}`}>로딩중...</div>):(
         <div className={styles.about}>
             <div className={styles.aboutImgBox}>
@@ -33,12 +31,15 @@ const About = () => {
             <div className={styles.aboutTextBox}>
                 <div className={styles.title}>{m.title}</div>
                 <div className={styles.subtitle}>{m.original_title}</div>
-                {/* <img 
-                className={styles.img}
-                src={`https://image.tmdb.org/t/p/w500/${m.poster_path}`} alt={m.title}/> */}
                 <div className={styles.overview}>{m.overview}</div>
+                <div className={styles.genres}>{m.genres.name}</div>
+                <div className={styles.genres}>
+                    {m.genres.map(genre => (
+                        <span key={genre.id} className={styles.genre}>{genre.name}</span>
+                    ))}
+                </div>
                 <div className={styles.date}>개봉: {m.release_date}</div>
-                <div className={styles.voteAverage}>🍅 {m.vote_average}</div>
+                <div className={styles.voteAverage}>⭐ {m.vote_average}</div>
             </div>
         </div>
         )
@@ -52,3 +53,7 @@ const About = () => {
 
 
 export default About;
+
+
+
+

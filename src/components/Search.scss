@@ -16,7 +16,7 @@
             border: none;
             background: transparent;
             .search-icon{
-                color: #2cb67d;
+                color: #64aaff;
                 font-size: 30px;
             }
         }
@@ -39,11 +39,11 @@
                 justify-content: space-between;
                 gap: 0.5rem;
                 padding: 0.2rem 1rem 0.2rem 0.2rem;
-                border-bottom: 1px solid #fff;
+                border-bottom: 1px solid #fffffe;
                 a{
-                    color: #fff;
+                    color: #fffffe;
                     text-decoration: none;
-                    &:hover{color: #2cb67d;}
+                    &:hover{color: #64aaff;}
                     .search-list{
                         display: flex;
                         gap: 1.5rem;

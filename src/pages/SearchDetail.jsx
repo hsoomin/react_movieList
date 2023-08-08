@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useParams } from 'react-router-dom'; 
 import './SearchDetail.scss'
 
-const SearchDetail = ( { apiKey, imgPath } ) => {  //{ apiKey, imgPath }왜 못불러와.....
+const SearchDetail = ( { apiKey, imgPath } ) => {  //{ apiKey, imgPath } 확인하기
     const { movieId } = useParams(); 
     const [detailInfo, setDetailInfo] = useState({});
     const [actors, setActors] = useState([]);
@@ -31,11 +31,7 @@ const SearchDetail = ( { apiKey, imgPath } ) => {  //{ apiKey, imgPath }왜 못�
         } catch (error) {
         console.error('Error fetching cast details:', error);
         }
-
-        
-        
     };
-
 
     return (
         <div className="searchDetail">
@@ -56,6 +52,7 @@ const SearchDetail = ( { apiKey, imgPath } ) => {  //{ apiKey, imgPath }왜 못�
                     <Swiper 
                     slidesPerView={5}
                     spaceBetween={10}
+                    className="mySwiper"
                     >
                         {actors.map((actor) => (
                             <SwiperSlide key={actor.id} className="Swiper-Slide">
@@ -71,23 +68,6 @@ const SearchDetail = ( { apiKey, imgPath } ) => {  //{ apiKey, imgPath }왜 못�
                     </Swiper>
                 </div>
             </div>
-            {/* <div className="posterInfo">
-                <div className="search-poster">
-                    <h3>poster</h3>
-                    <Swiper 
-                    slidesPerView={5}
-                    spaceBetween={10}
-                    >
-                        {poster.map((actor) => (
-                            <SwiperSlide key={poster.id} className="Swiper-Slide">
-                                <div className="search-img">
-                                    <img src={`${'https://image.tmdb.org/t/p/original/'}${poster.profile_path}`} alt="" />
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
-            </div>   */}
         </div>
     );
 };
