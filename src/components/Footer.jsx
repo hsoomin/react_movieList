@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className='footer'>
             <div className='footer-copy'>
-                <p>COPYRIGHT © SOOMIN ALL RIGHT RESERVED.</p>
+                <p>COPYRIGHT <span className='copy'>&copy;</span> SOOMIN ALL RIGHT RESERVED.</p>
             </div>
         </div>
     );

@@ -8,11 +8,11 @@
             justify-content: center;
             align-items: center;
             gap: 0;
-            min-height: 80vh;
+            min-height: 100vh;
             position: relative;
             img{
                 width: 100%;
-                height: 90vh;
+                height: 100vh;
             }
             &::before{
                 background: linear-gradient(0deg,#16161a 0,hsla(0deg,0%,9%,.987) 1.62%,hsla(0deg,0%,9%,.951) 3.1%,hsla(0deg,0%,9%,.896) 4.5%,hsla(0deg,0%,9%,.825) 5.8%,hsla(0deg,0%,9%,.741) 7.06%,hsla(0deg,0%,9%,.648) 8.24%,hsla(0deg,0%,9%,.55) 9.42%,hsla(0deg,0%,9%,.45) 10.58%,hsla(0deg,0%,9%,.352) 11.76%,hsla(0deg,0%,9%,.259) 12.94%,hsla(0deg,0%,9%,.175) 14.2%,hsla(0deg,0%,9%,.104) 15.5%,hsla(0deg,0%,9%,.049) 16.9%,hsla(0deg,0%,9%,.013) 18.38%,hsla(0deg,0%,9%,0) 20%);
@@ -34,7 +34,7 @@
             }
         }
         .search-info{
-            max-width: 51%;
+            max-width: 52%;
             padding: 0 2rem;
             display: flex;
             flex-direction: column;
@@ -48,6 +48,7 @@
                 font-size: 50px;
                 font-weight: bold;
                 color: #fffffe;
+                margin-bottom: 0;
             }
             .search-originTit{
                 font-size: 40px;
@@ -76,44 +77,44 @@
             }
             .mySwiper{
                 position: relative;
-                overflow: hidden;
-            }
-            .swiper-wrapper{
-                width: 100%;
-                max-width: 1440px;
-                .swiper-slide{
-                    .search-img{
-                        width: 100%;
-                        img{
+                // overflow: hidden;
+                .swiper-wrapper{
+                    display: flex;
+                    position: absolute;
+                    .swiper-slide{
+                        .actor-img{
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .actor-info{
+                            position: absolute;
+                            bottom: 0;
+                            /* left: 0; */
                             width: 100%;
-                        }
-                    }
-                    .search-info{
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 33%;
-                        background: rgba(0,0,0,.7);
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        padding: 30px;
-                        box-sizing: border-box;
-                        color: rgba(255,255,255,.8);
-                        opacity: 0;
-                        &:hover{
-                            opacity: 1;
-                            transition: .5s;
-                        }
-                        .actor-name{
-                            font-size: 20px;
-                            color: #fffffe;
-                        }
-                        .actor-char{
-                            font-size: 20px;
-                            color: #fffffe;
+                            /* height: 33%; */
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            /* align-items: center; */
+                            padding: 30px;
+                            box-sizing: border-box;
+                            color: rgba(255, 255, 255, 0.8);
+                            &:hover{
+                                opacity: 1;
+                                transition: .5s;
+                                background: #16161a71;
+                            }
+                            .actor-name{
+                                font-size: 20px;
+                                color: #fffffe;
+                                cursor: pointer;
+                            }
+                            .actor-char{
+                                font-size: 20px;
+                                color: #fffffe;
+                                cursor: pointer;
+                            }
                         }
                     }
                 }
