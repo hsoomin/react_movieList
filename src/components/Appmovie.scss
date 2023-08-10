@@ -1,0 +1,83 @@
+.amovie{
+    .amovie-card{
+        position: relative;
+        width: 240px;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: #2f2f37;
+        border-radius: 10px;
+        a{
+            text-decoration: none;
+            color: #fffffe;
+            .amovie-imgBox{
+                position: relative;
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+                .amovie-img{
+                    width: 100%;
+                    height: 320px;
+                    border-radius: 10px 10px 0 0;
+                    &:hover{
+                        transform: scale(1.1);
+                        transition: .5s;
+                    }
+                }
+                .amovie-average{
+                    position: absolute;
+                    bottom: 7px;
+                    right: 5px;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 15px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 0;
+                    border-radius: 50%;
+                    background-color: #00000095;
+                    color: #fffffe;
+                    font-weight: bold;
+                }
+                .amovie-heartIcon{
+                    background: transparent;
+                    position: absolute;
+                    top: 2%;
+                    right: 2%;
+                    cursor: pointer;
+                    color: #fffffe;
+                    font-size: 25px;
+                    opacity: .8;
+                    border: none;
+                    &.red {
+                        color: red;
+                    }
+                    &:hover{
+                        transform: scale(1.2);
+                        transition: .5s;
+                    } 
+                }
+            }  
+            .amovie-info{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 0 10px 10px 10px;
+                box-sizing: border-box;
+                .amovie-title{
+                    font-size: 16px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    &:hover{color: #64aaff}
+                }  
+                .amovie-date{
+                    font-size: 14px;
+                    color: #9aa5b2;
+                }  
+            }
+        }
+    }
+}

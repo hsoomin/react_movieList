@@ -1,10 +1,44 @@
+@font-face {
+  font-family: 'DX Subtitle';
+  src: url('/public/font/DXMSubtitlesStd-M-KO.woff') format('woff'),
+      url('/public/font/DXMSubtitlesStd-M-KO.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #e23391;
+}
+::-webkit-scrollbar-track {
+  background-color: #16161a;
+}
+
+
+.search-result::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
+.search-result::-webkit-scrollbar-thumb {
+  background-color: #16161a;
+}
+.search-result::-webkit-scrollbar-track {
+  background-color: #16161a;
+}
+
 body {
+  background-color: #16161a;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'DX Subtitle', 'Diphylleia', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {

@@ -1,11 +1,13 @@
+// import { NavLink } from 'react-router-dom';
+// import { BsSearch } from "react-icons/bs"; 
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const activeStyle = {
-        color:'turquoise'
-    }
+    // const activeStyle = {
+    //     color:'#e23391'
+    // }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,22 +27,12 @@ const Navbar = () => {
 
     return (
         <nav className={isScrolled ? 'scrolled' : ''}>
-            <div className='logo'><img src={require("../img/logo.png")} alt="logo" /></div>
-            <ul>
-                    <li className='nav-item'>
-                        <NavLink to='' style={({isActive}) => (isActive ? activeStyle : undefined)}>Home</NavLink>
-                    </li>
-                    <li className='nav-item'>
-                        <NavLink to='movies' style={({isActive}) => (isActive ? activeStyle : undefined)}>Movies</NavLink>
-                    </li>
-                    <li className='nav-item'>
-                        <NavLink to='users' style={({isActive}) => (isActive ? activeStyle : undefined)}>Users</NavLink>
-                    </li>
-                </ul>
+            <div className='logo'><Link to="/"><img src={require("../img/logo_pink.png")} alt="logo" /></Link></div>
+            {/* <div className='nav-item'>
+                <NavLink onClick={showModal} to=''  style={({isActive}) => (isActive ? activeStyle : undefined)}><BsSearch/></NavLink>
+            </div> */}
         </nav>
     );
 };
 
 export default Navbar;
-
-

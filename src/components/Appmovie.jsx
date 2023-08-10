@@ -1,22 +1,38 @@
+import { AiFillHeart } from "react-icons/ai"; 
 import React from 'react';
 import {Link} from 'react-router-dom';
-import styles from './Appmovie.module.scss'
+// import styles from './Appmovie.module.scss'
+import "./Appmovie.scss"
 
 
-const Appmovie = ({id,title,subtitle,posterPath,date}) => {
+const Appmovie = ({id,title,posterPath,date, average }) => {
+    
     return (
-        <div key={id} className={styles.amovie}>
-            <Link to={`/about/${id}`}>
-                <h2 className={styles.title}>{title}</h2>
-                <h3 className={styles.subtitle}>{subtitle}</h3>
-                <img className={styles.img}
-                    src={`https://image.tmdb.org/t/p/w500/${posterPath}`}
-                    alt={title}
-                />
-                <div className={styles.date}>{date}</div>
-            </Link>
+        <div key={id} className="amovie">
+            <div className='amovie-card'>
+                <Link to={`/about/${id}`}>
+                    <div className='amovie-imgBox'>
+                        <img className="amovie-img"
+                            src={`https://image.tmdb.org/t/p/w500/${posterPath}`}
+                            alt={title}
+                        />
+                        <span className='amovie-average'>{average}</span> 
+                        <button className='amovie-heartIcon'>
+                            <AiFillHeart />
+                        </button>
+                    </div>
+                    <div className='amovie-info'>
+                        <h2 className="amovie-title">{title}</h2>
+                        <div className="amovie-date">{date}</div>
+                    </div>
+                </Link>
+            </div>
         </div>
     );
 };
 
 export default Appmovie;
+
+
+
+
