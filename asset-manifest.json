@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react_movieList/static/css/main.858bc812.css",
-    "main.js": "/react_movieList/static/js/main.b75b2732.js",
+    "main.css": "/react_movieList/static/css/main.5737b3f6.css",
+    "main.js": "/react_movieList/static/js/main.144e9c9f.js",
     "static/media/DXMSubtitlesStd-M-KO.woff": "/react_movieList/static/media/DXMSubtitlesStd-M-KO.4fa8f86cd1f9663ac21b.woff",
     "static/media/DXMSubtitlesStd-M-KO.woff2": "/react_movieList/static/media/DXMSubtitlesStd-M-KO.e687857764e1afa5858f.woff2",
     "index.html": "/react_movieList/index.html",
-    "main.858bc812.css.map": "/react_movieList/static/css/main.858bc812.css.map",
-    "main.b75b2732.js.map": "/react_movieList/static/js/main.b75b2732.js.map"
+    "main.5737b3f6.css.map": "/react_movieList/static/css/main.5737b3f6.css.map",
+    "main.144e9c9f.js.map": "/react_movieList/static/js/main.144e9c9f.js.map"
   },
   "entrypoints": [
-    "static/css/main.858bc812.css",
-    "static/js/main.b75b2732.js"
+    "static/css/main.5737b3f6.css",
+    "static/js/main.144e9c9f.js"
   ]
 }
