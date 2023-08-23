@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { useParams } from 'react-router-dom'; 
 import './SearchDetail.scss'
 
 const SearchDetail = ( ) => {  //{ apiKey, imgPath } 확인하기
-    const apiKey = '6226250a5cf369ae485bb71106550d6f';
+    const APIKEY = process.env.REACT_APP_TMDB_API_KEY;
     const imgPath = 'https://image.tmdb.org/t/p/original/';
     
     const { movieId } = useParams(); 
@@ -19,7 +18,7 @@ const SearchDetail = ( ) => {  //{ apiKey, imgPath } 확인하기
     const fetchMovieDetails = async () => {
         try {
         const response = await axios.get(
-            `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=ko-KR`
+            `https://api.themoviedb.org/3/movie/${movieId}?api_key=${APIKEY}&language=ko-KR`
         );
         setDetailInfo(response.data);
         } catch (error) {
@@ -28,7 +27,7 @@ const SearchDetail = ( ) => {  //{ apiKey, imgPath } 확인하기
 
         try {
         const response = await axios.get(
-            `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=ko-KR`
+            `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${APIKEY}&language=ko-KR`
         );
         setActors(response.data.cast);
         } catch (error) {
@@ -41,7 +40,7 @@ const SearchDetail = ( ) => {  //{ apiKey, imgPath } 확인하기
         <div className="searchDetail">
             <div className="movieInfo">
                 <div className="search-backImg">
-                    <img src={`${'https://image.tmdb.org/t/p/original/'}${detailInfo.backdrop_path}`} alt="" />
+                    <img src={`${imgPath}${detailInfo.backdrop_path}`} alt="" />
                 </div>
                 <div className="search-info">
                     <p className="search-title">{detailInfo.title}</p>
@@ -53,23 +52,19 @@ const SearchDetail = ( ) => {  //{ apiKey, imgPath } 확인하기
             <div className="creditInfo">
                 <div className="search-actors">
                     <h3>Actors</h3>
-                    <Swiper 
-                    slidesPerView={5}
-                    spaceBetween={10}
-                    className="mySwiper"
-                    >
-                        {actors.map((actor) => (
-                            <SwiperSlide key={actor.id} className="Swiper-Slide">
-                                <div className="actor-img">
+                    <ul className="actor-list">
+                        {actors.slice(0, 14).map((actor) => (
+                            <li key={actor.id} className="actor-item">
+                                <div className="search-img">
                                     <img src={`${imgPath}${actor.profile_path}`} alt=''/>
                                 </div>
-                                <div className="actor-info">
+                                <div className="search-info">
                                     <p className="actor-name">{actor.name}</p>
                                     <p className="actor-char">{actor.character}</p>
                                 </div>
-                            </SwiperSlide>
+                            </li>
                         ))}
-                    </Swiper>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -77,4 +72,10 @@ const SearchDetail = ( ) => {  //{ apiKey, imgPath } 확인하기
 };
 
 export default SearchDetail;
+
+
+
+
+
+
 

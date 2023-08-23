@@ -4,13 +4,14 @@ import styles from './Upcoming.module.scss'
 
 
 const Upcoming = () => {
+    const APIKEY = process.env.REACT_APP_TMDB_API_KEY;
     const [isLoading, setLoading] = useState(true);
     const [upcomingMovies, setUpcomingMovies] = useState([]);
 
     const getMovies = async () => {
         try {
             const response = await axios.get(
-                'https://api.themoviedb.org/3/movie/upcoming?api_key=6226250a5cf369ae485bb71106550d6f&language=ko-KR&region=KR'
+                `https://api.themoviedb.org/3/movie/upcoming?api_key=${APIKEY}&language=ko-KR&region=KR`
             );
             setUpcomingMovies(response.data.results);
             console.log(response.data.results);

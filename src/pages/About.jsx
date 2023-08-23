@@ -5,13 +5,14 @@ import styles from './About.module.scss';
 
 const About = () => {
 
+    const APIKEY = process.env.REACT_APP_TMDB_API_KEY;
     const {id} = useParams();
     console.log('ID from URL:', id); 
     const [m, setAppm] =useState(null)
     const [loading, setLoading] =useState(true)
 
     useEffect(() =>{
-        axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=6226250a5cf369ae485bb71106550d6f&language=ko-KR`)
+        axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${APIKEY}&language=ko-KR`)
         .then(res => {
             console.log(res)
             setAppm(res.data)
