@@ -7,6 +7,7 @@ import Upcoming from '../components/Upcoming';
 import Footer from '../components/Footer';
 
 const Home = () => {
+    const APIKEY = process.env.REACT_APP_TMDB_API_KEY;
     const [isLoading, setLoading] = useState(true);
     const [appMovie, setAppMovie] = useState([]);
     const [visibleMovies, setVisibleMovies] = useState(5); // 처음에 보이는거
@@ -15,7 +16,7 @@ const Home = () => {
     const getMovies = async () => {
         try {
         const response = await axios.get(
-            'https://api.themoviedb.org/3/movie/now_playing?api_key=6226250a5cf369ae485bb71106550d6f&language=ko-KR&region=KR'
+            `https://api.themoviedb.org/3/movie/now_playing?api_key=${APIKEY}&language=ko-KR&region=KR`
         );
         setAppMovie(response.data.results);
         setLoading(false);

@@ -70,51 +70,32 @@
         width: 100%;
         padding: 0 2rem;
         box-sizing: border-box;
+        display: flex;
         .search-actors{
             h3{
+                font-size: 40px;
                 color: #fffffe;
-                font-size: 30px;
             }
-            .mySwiper{
-                position: relative;
-                // overflow: hidden;
-                .swiper-wrapper{
-                    display: flex;
-                    position: absolute;
-                    .swiper-slide{
-                        .actor-img{
-                            img{
-                                width: 100%;
-                            }
+            .actor-list{
+                display: flex;
+                flex-wrap: wrap; 
+                justify-content: space-between;
+                padding: 0;
+                .actor-item{
+                    width: 13%;
+                    margin-bottom: 30px;
+                    .search-img{
+                        img{width: 100%}
+                    }
+                    .search-info{
+                        text-align: center;
+                        .actor-name{
+                            font-size: 25px;
+                            color: #fffffe;
                         }
-                        .actor-info{
-                            position: absolute;
-                            bottom: 0;
-                            /* left: 0; */
-                            width: 100%;
-                            /* height: 33%; */
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            /* align-items: center; */
-                            padding: 30px;
-                            box-sizing: border-box;
-                            color: rgba(255, 255, 255, 0.8);
-                            &:hover{
-                                opacity: 1;
-                                transition: .5s;
-                                background: #16161a71;
-                            }
-                            .actor-name{
-                                font-size: 20px;
-                                color: #fffffe;
-                                cursor: pointer;
-                            }
-                            .actor-char{
-                                font-size: 20px;
-                                color: #fffffe;
-                                cursor: pointer;
-                            }
+                        .actor-char{
+                            font-size: 20px;
+                            color: #aaa;
                         }
                     }
                 }
