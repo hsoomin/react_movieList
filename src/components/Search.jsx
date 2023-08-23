@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import SearchDetail from '../pages/SearchDetail';
 
 const Search = () => {
-    const apiKey = '6226250a5cf369ae485bb71106550d6f';
+    const APIKEY = process.env.REACT_APP_TMDB_API_KEY;
     const imgPath = 'https://image.tmdb.org/t/p/original/';
 
     const [searchWord, setSearchWord] = useState('');
@@ -23,7 +23,7 @@ const Search = () => {
     };
 
     const search = () => {
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=ko-KR&page=1&include_adult=false&query=${searchWord}`)
+        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${APIKEY}&language=ko-KR&page=1&include_adult=false&query=${searchWord}`)
             .then((response) => {
                 setMovies(response.data.results);
             })
@@ -37,7 +37,7 @@ const Search = () => {
         setSelectedMovieID(movieID);
 
         setDetailInfo({});
-        axios.get(`https://api.themoviedb.org/3/movie/${movieID}?api_key=${apiKey}&language=ko-KR`)
+        axios.get(`https://api.themoviedb.org/3/movie/${movieID}?api_key=${APIKEY}&language=ko-KR`)
             .then((response) => {
                 setDetailInfo(response.data);
                 console.log(response);
@@ -46,7 +46,7 @@ const Search = () => {
                 console.error('Error fetching movie details:', error);
             });
 
-        axios.get(`https://api.themoviedb.org/3/movie/${movieID}/credits?api_key=${apiKey}&language=ko-KR`)
+        axios.get(`https://api.themoviedb.org/3/movie/${movieID}/credits?api_key=${APIKEY}&language=ko-KR`)
             .then((response) => {
                 setActors(response.data.cast);
             })
@@ -88,7 +88,7 @@ const Search = () => {
                     ))}
                 </ul>
             </div>
-            {mode === 'detail' && <SearchDetail apiKey={apiKey} imgPath={imgPath} movieID={selectedMovieID} />} 
+            {mode === 'detail' && <SearchDetail apiKey={APIKEY} imgPath={imgPath} movieID={selectedMovieID} />} 
         </div>
     );
 };
