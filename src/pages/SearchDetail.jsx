@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom'; 
 import './SearchDetail.scss'
 
-const SearchDetail = ( ) => {  //{ apiKey, imgPath } 확인하기
+const SearchDetail = ( ) => {  
     const APIKEY = process.env.REACT_APP_TMDB_API_KEY;
     const imgPath = 'https://image.tmdb.org/t/p/original/';
     
@@ -72,10 +72,3 @@ const SearchDetail = ( ) => {  //{ apiKey, imgPath } 확인하기
 };
 
 export default SearchDetail;
-
-
-
-
-
-
-

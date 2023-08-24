@@ -1,7 +1,6 @@
 import { AiFillHeart } from "react-icons/ai"; 
 import React from 'react';
 import {Link} from 'react-router-dom';
-// import styles from './Appmovie.module.scss'
 import "./Appmovie.scss"
 
 
