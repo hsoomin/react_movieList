@@ -10,7 +10,7 @@ const Home = () => {
     const APIKEY = process.env.REACT_APP_TMDB_API_KEY;
     const [isLoading, setLoading] = useState(true);
     const [appMovie, setAppMovie] = useState([]);
-    const [visibleMovies, setVisibleMovies] = useState(5); // 처음에 보이는거
+    const [visibleMovies, setVisibleMovies] = useState(10); 
     const moviesPerPage = 5; // 버튼 클릭하면 5개씩
 
     const getMovies = async () => {
